@@ -1,7 +1,7 @@
 {
   "name": "buyme",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -27,5 +27,24 @@
     "postcss": "^8.4.37",
     "tailwindcss": "^3.4.1",
     "vite": "^5.2.0"
-  }
+  },
+  "description": "BuyMe, a React eCom store for my CA in JS-Frameworks at Noroff",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiverMichael/BuyMe.git"
+  },
+  "keywords": [
+    "React",
+    "Vite",
+    "JavaScript",
+    "CSS",
+    "TailwindCSS",
+    "Flowbite"
+  ],
+  "author": "Michael Nilsson <mrn@michaelriver.dev>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiverMichael/BuyMe/issues"
+  },
+  "homepage": "https://github.com/RiverMichael/BuyMe#readme"
 }
