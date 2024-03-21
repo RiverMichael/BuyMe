@@ -22,8 +22,8 @@ export default function NavBar() {
             isNavOpen ? "block" : "hidden"
           } w-screen text-center fixed top-16 left-0 p-5 md:block md:w-auto md:ms-auto md:me-5 md:relative md:top-auto md:p-0 bg-ghost-white md:bg-inherit border-b border-silver-chalice md:border-0`}>
           <ul className="flex flex-col md:flex-row gap-5">
-            <li className="uppercase font-bold hover:text-sky-blue cursor-pointer">Home</li>
-            <li className="uppercase font-bold hover:text-sky-blue cursor-pointer">Contact</li>
+            <li className="uppercase font-bold hover:text-dark-gray cursor-pointer">Home</li>
+            <li className="uppercase font-bold hover:text-dark-gray cursor-pointer">Contact</li>
           </ul>
         </div>
 

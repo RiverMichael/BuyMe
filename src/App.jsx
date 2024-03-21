@@ -1,7 +1,13 @@
+import Footer from "./components/ui/Footer";
 import Header from "./components/ui/Header";
 
 function App() {
-  return <Header />;
+  return (
+    <div>
+      <Header />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
