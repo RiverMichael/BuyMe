@@ -6,6 +6,10 @@ body {
   @apply bg-snow-mist text-gunmetal-gray font-body;
 }
 
+#root {
+  @apply flex flex-col min-h-screen;
+}
+
 h1,
 h2,
 h3,

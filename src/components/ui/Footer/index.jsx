@@ -2,8 +2,8 @@ import Logo from "../../../assets/buyme_logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-ghost-white">
-      <div className="w-full mx-auto p-4 md:py-8">
+    <footer className="bg-ghost-white mt-auto">
+      <div className="w-full mx-auto p-4 ">
         <div className="sm:flex sm:items-center sm:justify-between">
           <img src={Logo} alt="Logotype for BuyMe" className="h-8 mb-4 sm:mb-0" />
 
