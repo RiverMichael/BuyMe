@@ -1,5 +1,9 @@
 function App() {
-  return <div className="text-3xl font-bold">BuyMe</div>;
+  return (
+    <div>
+      <h1>BuyMe</h1>
+    </div>
+  );
 }
 
 export default App;
