@@ -6,44 +6,66 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function NavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
-    <nav>
-      <div className="w-full flex items-center justify-between mx-auto p-4 sticky ">
-        <button onClick={() => setIsNavOpen(!isNavOpen)} data-collapse-toggle="navbar" type="button" className="md:hidden" aria-controls="navbar" aria-expanded="false">
-          <IoMenuOutline size={30} />
-        </button>
-
-        <Link to="/">
-          <img src={Logo} alt="Logotype for BuyMe" className="w-44 md:w-56 lg:w-64  mx-5 md:mx-0" />
-        </Link>
-
-        <div
-          id="navbar"
-          className={`${
-            isNavOpen ? "block" : "hidden"
-          } w-screen text-center fixed top-16 left-0 p-5 md:block md:w-auto md:ms-auto md:me-5 md:relative md:top-auto md:p-0 bg-ghost-white md:bg-inherit border-b border-silver-chalice md:border-0`}>
-          <ul className="flex flex-col md:flex-row gap-5 items-center">
+    <div className="navbar bg-snow-mist p-5">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <button onClick={() => setIsNavOpen(!isNavOpen)} tabIndex={0} className="btn btn-ghost p-0 md:hidden">
+            <IoMenuOutline size={40} />
+          </button>
+          <ul className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content py-8 px-4 w-56 flex gap-2 bg-snow-mist`}>
             <li>
               <NavLink
                 to="/"
                 onClick={() => setIsNavOpen(false)}
-                className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold" : "uppercase font-bold hover:text-sky-blue")}
-                aria-current="page">
+                className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold text-base" : "text-base uppercase font-bold hover:text-primary")}>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="contact" onClick={() => setIsNavOpen(false)} className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold" : "uppercase font-bold hover:text-sky-blue")}>
+              <NavLink
+                to="contact"
+                onClick={() => setIsNavOpen(false)}
+                className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold text-base" : "text-base uppercase font-bold hover:text-primary")}>
                 Contact
               </NavLink>
             </li>
           </ul>
         </div>
 
-        <NavLink to="checkout" className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold" : "uppercase font-bold hover:text-sky-blue")}>
+        <Link to="/" className="navbar-brand hidden md:flex">
+          <img src={Logo} alt="Logotype for BuyMe" className="w-full max-w-72" />
+        </Link>
+      </div>
+
+      <div className="navbar-center md:hidden flex">
+        <Link to="/" className="navbar-brand">
+          <img src={Logo} alt="Logotype for BuyMe" className="w-full max-w-44 sm:max-w-56 mx-2" />
+        </Link>
+      </div>
+
+      <div className="navbar-end">
+        <ul className="menu menu-horizontal hidden md:flex">
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold text-base" : "text-base uppercase font-bold hover:text-primary transition-colors duration-300 ease-in-out")}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="contact"
+              className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold text-base" : "text-base uppercase font-bold hover:text-primary transition-colors duration-300 ease-in-out")}>
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+        <NavLink to="checkout" className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold" : "uppercase font-bold hover:text-primary transition-colors duration-300 ease-in-out")}>
           <CartIcon />
         </NavLink>
       </div>
-    </nav>
+    </div>
   );
 }
