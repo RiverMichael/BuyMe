@@ -1,6 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#87ceeb",
+          secondary: "#e6e6f1",
+          accent: "#ff6347",
+          ".btn-cta": {
+            background: "#87ceeb",
+            border: "1px solid #87ceeb",
+            transition: "all 0.3s",
+          },
+          ".btn-cta:hover": {
+            background: "#003366",
+            color: "#fff",
+          },
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
       colors: {
