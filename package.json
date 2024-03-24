@@ -10,8 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "flowbite": "^2.3.0",
-    "flowbite-react": "^0.7.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
@@ -23,6 +21,7 @@
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
+    "daisyui": "^4.8.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -42,7 +41,7 @@
     "JavaScript",
     "CSS",
     "TailwindCSS",
-    "Flowbite"
+    "DaisyUi"
   ],
   "author": "Michael Nilsson <mrn@michaelriver.dev>",
   "license": "ISC",
