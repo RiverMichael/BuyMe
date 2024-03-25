@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import CalculateDiscount from "../CalculateDiscount";
 import DisplayPrice from "../DisplayPrice";
 import StarRating from "../StarRating";
+import Reviews from "../Reviews";
 
 export default function ProductCard({ product }) {
   return (
@@ -14,7 +15,11 @@ export default function ProductCard({ product }) {
             {product.title}
             <CalculateDiscount price={product.price} discountedPrice={product.discountedPrice} />
           </h2>
-          <StarRating rating={product.rating} />
+          <div className="flex gap-2 text-dark-gray">
+            <StarRating rating={product.rating} />
+            <span>|</span>
+            <Reviews id={product.id} reviews={product.reviews} />
+          </div>
         </div>
 
         <div className="flex gap-2 items-center justify-start">

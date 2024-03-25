@@ -9,7 +9,7 @@ export default function StarRating({ rating }) {
   }, [rating]);
 
   return (
-    <div className="flex gap-1 items-center text-dark-gray">
+    <div className="flex gap-1 items-center">
       {[...Array(5)].map((_, index) => {
         const currentRate = index + 1;
         return currentRate <= Math.floor(ratingValue) ? (
