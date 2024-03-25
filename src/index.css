@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+  @apply outline;
+} */
+
 body {
   @apply bg-snow-mist text-gunmetal-gray font-body;
 }
