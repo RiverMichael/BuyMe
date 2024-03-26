@@ -8,13 +8,13 @@ export default function NavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="navbar bg-snow-mist p-5">
+    <div className="navbar bg-ghost-white p-5 border-b">
       <div className="navbar-start">
         <div className="dropdown static">
-          <button onClick={() => setIsNavOpen(!isNavOpen)} tabIndex={0} className="btn btn-ghost p-0 md:hidden">
-            <IoMenuOutline size={40} />
+          <button onClick={() => setIsNavOpen(!isNavOpen)} tabIndex={0} className="btn btn-ghost p-0 lg:hidden">
+            <IoMenuOutline size={30} />
           </button>
-          <ul className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content py-8 px-4 absolute left-0 w-screen flex gap-2 bg-snow-mist`}>
+          <ul className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content py-5 mt-5 px-4 absolute left-0 w-6/12 flex bg-ghost-white rounded-br-box border-b border-r `}>
             <li>
               <NavLink
                 to="/"
@@ -34,19 +34,13 @@ export default function NavBar() {
           </ul>
         </div>
 
-        <Link to="/" className="navbar-brand hidden md:flex">
-          <img src={Logo} alt="Logotype for BuyMe" className="w-full max-w-72" />
-        </Link>
-      </div>
-
-      <div className="navbar-center md:hidden flex">
-        <Link to="/" className="navbar-brand">
-          <img src={Logo} alt="Logotype for BuyMe" className="w-full max-w-44 sm:max-w-56 mx-2" />
+        <Link to="/" className="navbar-brand ms-2 md:ms-0 max-w-44">
+          <img src={Logo} alt="Logotype for BuyMe" className="w-full " />
         </Link>
       </div>
 
       <div className="navbar-end">
-        <ul className="menu menu-horizontal hidden md:flex">
+        <ul className="menu menu-horizontal hidden lg:flex">
           <li>
             <NavLink to="/" className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "text-dark-gray" : "hover:text-primary transition-colors duration-300 ease-in-out"}`}>
               Home
