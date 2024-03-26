@@ -6,18 +6,21 @@ import Reviews from "../Reviews";
 
 export default function ProductCard({ product }) {
   return (
-    <div className="card card-compact w-96 bg-ghost-white shadow-lg ms-5">
-      <img src={product.image.url} alt={product.image.alt} className="rounded-t-box" />
+    <div className="card card-compact w-80 bg-ghost-white shadow-lg border">
+      <figure className="w-full h-60 overflow-hidden rounded-t-box">
+        <img src={product.image.url} alt={product.image.alt} className="w-full h-full object-cover rounded-t-box" />
+      </figure>
 
-      <div className="card-body gap-2.5">
+      <div className="card-body gap-2.5 justify-between">
         <div className="flex flex-col">
-          <h2 className="card-title items-start">
+          <h2 className="card-title items-start justify-between">
             {product.title}
             <CalculateDiscount price={product.price} discountedPrice={product.discountedPrice} />
           </h2>
           <div className="flex gap-2.5 text-dark-gray">
             <StarRating rating={product.rating} />
-            <span>|</span>
+            {product.reviews.length ? <span>|</span> : ""}
+
             <Reviews id={product.id} reviews={product.reviews} />
           </div>
         </div>
