@@ -4,6 +4,7 @@ import HomePage from "../components/Pages/HomePage";
 import ContactPage from "../components/Pages/ContactPage";
 import CheckoutPage from "../components/Pages/CheckoutPage";
 import CheckoutSuccessPage from "../components/Pages/CheckoutSuccessPage";
+import ProductDetailsPage from "../components/Pages/ProductDetails";
 import PageNotFound from "../components/ui/PageNotFound";
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "checkoutsuccess",
         element: <CheckoutSuccessPage />,
+      },
+      {
+        path: "products/:id",
+        element: <ProductDetailsPage />,
       },
       {
         path: "*",
