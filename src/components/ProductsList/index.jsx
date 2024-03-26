@@ -16,7 +16,7 @@ export default function ProductsList() {
 
   if (products) {
     return (
-      <div className="flex flex-wrap gap-y-10 gap-x-5 justify-evenly 2xl:container mx-auto">
+      <div className="flex flex-wrap gap-y-10 gap-x-5 justify-evenly">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
