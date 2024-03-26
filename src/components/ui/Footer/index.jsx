@@ -3,7 +3,7 @@ import Logo from "../../../assets/buyme_logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-ghost-white mt-auto">
+    <footer className="bg-ghost-white mt-auto border-t">
       <div className="w-full mx-auto p-4 ">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link to="/">
