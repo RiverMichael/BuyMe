@@ -1,8 +1,8 @@
 import Logo from "../../assets/buyme_logo.png";
-import { IoMenuOutline } from "react-icons/io5";
 import { useState } from "react";
 import CartIcon from "../CartIcon";
 import { Link, NavLink } from "react-router-dom";
+import { Spin as Hamburger } from "hamburger-react";
 
 export default function NavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -10,11 +10,11 @@ export default function NavBar() {
   return (
     <div className="navbar bg-ghost-white p-5 border-b">
       <div className="navbar-start">
-        <div className="dropdown static">
-          <button onClick={() => setIsNavOpen(!isNavOpen)} tabIndex={0} className="btn btn-ghost p-0 lg:hidden">
-            <IoMenuOutline size={30} />
+        <div className="dropdown static flex items-center">
+          <button onClick={() => setIsNavOpen(!isNavOpen)} tabIndex={0} className="p-0 lg:hidden">
+            <Hamburger size={30} direction="left" duration={0.5} rounded />
           </button>
-          <ul className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content py-5 mt-5 px-4 absolute left-0 w-6/12 flex bg-ghost-white rounded-br-box border-b border-r `}>
+          <ul className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content py-5 px-4 absolute top-20 mt-2 left-0 w-6/12 flex bg-ghost-white rounded-br-box border-b border-r `}>
             <li>
               <NavLink
                 to="/"
