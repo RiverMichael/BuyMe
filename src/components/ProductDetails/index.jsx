@@ -10,13 +10,25 @@ import DisplayPrice from "../DisplayPrice";
 import CalculateDiscount from "../CalculateDiscount";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import productStore from "../store/products";
 
 export default function ProductDetails() {
   const id = useParams().id;
   const { data, isError, isLoading } = useFetch(API_BASE_URL + id);
   const product = data.data;
+  const { addToCart } = productStore();
+  const [showToast, setShowToast] = useState(false);
 
-  // Scrolls down to reviews when clicking the reviews link
+  function handleAddToCartClick() {
+    addToCart(product);
+    setShowToast(true);
+
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+  }
+
+  // Scrolls down to #reviews section when clicking the reviews link
   const location = useLocation();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
@@ -86,7 +98,9 @@ export default function ProductDetails() {
                 </div>
                 <CalculateDiscount price={product.price} discountedPrice={product.discountedPrice} />
               </div>
-              <button className="btn btn-sm btn-wide bg-gunmetal-gray text-ghost-white hover:border-gunmetal-gray hover:text-gunmetal-gray">Add to cart</button>
+              <button onClick={handleAddToCartClick} className="btn btn-sm btn-wide bg-gunmetal-gray text-ghost-white hover:border-gunmetal-gray hover:text-gunmetal-gray">
+                Add to cart
+              </button>
             </div>
 
             <article>
@@ -113,6 +127,14 @@ export default function ProductDetails() {
             })}
           </div>
         </section>
+
+        <div id="addToCartToast" className={`toast toast-top toast-end ${showToast ? "" : "hidden"}`}>
+          <div className="alert alert-success bg-green-400">
+            <span>
+              You added <span className="text-base font-bold">1 {product.title}</span> to you shopping cart.
+            </span>
+          </div>
+        </div>
       </div>
     );
   }

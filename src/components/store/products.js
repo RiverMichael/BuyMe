@@ -9,27 +9,27 @@ const productStore = create((set, get) => ({
   products: [],
   cart: [],
 
-  fetchProducts: async () => {
-    try {
-      const response = await fetch(API_BASE_URL);
-      const json = await response.json();
-      // set((state) => ({ ...state, products: json.data }));
-      set({ products: json.data });
-    } catch (error) {
-      console.error("Failed to fetch products:", error);
-    }
-  },
+  // fetchProducts: async () => {
+  //   try {
+  //     const response = await fetch(API_BASE_URL);
+  //     const json = await response.json();
+  //     // set((state) => ({ ...state, products: json.data }));
+  //     set({ products: json.data });
+  //   } catch (error) {
+  //     console.error("Failed to fetch products:", error);
+  //   }
+  // },
 
-  addToCart: (id) => {
+  addToCart: (product) => {
     set((state) => {
-      const product = state.products.find((product) => id === product.id);
+      // const product = state.products.find((product) => id === product.id);
 
       // const productInCartIndex = state.cart.findIndex((product) => id === product.id);
-      const productInCartIndex = findProductInCartIndex(state, id);
+      const productInCartIndex = findProductInCartIndex(state, product.id);
 
       if (productInCartIndex === -1) {
-        product.quantity = 1;
-        return { ...state, cart: [...state.cart, product] };
+        const newProduct = { ...product, quantity: 1 };
+        return { ...state, cart: [...state.cart, newProduct] };
       }
       state.cart[productInCartIndex].quantity++;
       return { ...state };
