@@ -129,9 +129,9 @@ export default function ProductDetails() {
         </section>
 
         <div id="addToCartToast" className={`toast toast-top toast-end z-10 ${showToast ? "" : "hidden"}`}>
-          <div className="alert alert-success bg-green-400">
+          <div className="alert bg-snow-mist whitespace-normal">
             <span>
-              You added <span className="text-base font-bold">1 {product.title}</span> to you shopping cart.
+              You added <span className="text-base font-bold">{product.title}</span> to you shopping cart.
             </span>
           </div>
         </div>
