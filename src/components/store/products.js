@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { API_BASE_URL } from "../../shared/api";
+// import { API_BASE_URL } from "../../shared/api";
 
 const findProductInCartIndex = (state, productId) => {
   return state.cart.findIndex((product) => productId === product.id);
@@ -39,27 +39,27 @@ const productStore = create((set, get) => ({
   // clearCart: () => set(() => ({ cart: [] })),
   clearCart: () => set({ cart: [] }),
 
-  increaseProductQuantity: (id) =>
+  increaseProductQuantity: (item) =>
     set((state) => {
       // const productInCartIndex = state.cart.findIndex((product) => id === product.id);
-      const productInCartIndex = findProductInCartIndex(state, id);
+      const productInCartIndex = findProductInCartIndex(state, item.id);
       state.cart[productInCartIndex].quantity++;
       return { ...state };
     }),
 
-  decreaseProductQuantity: (id) =>
+  decreaseProductQuantity: (item) =>
     set((state) => {
-      const product = state.products.find((product) => id === product.id);
+      // const product = state.products.find((product) => id === product.id);
       // const productInCartIndex = state.cart.findIndex((product) => id === product.id);
-      const productInCartIndex = findProductInCartIndex(state, id);
-      if (product.quantity === 1) {
+      const productInCartIndex = findProductInCartIndex(state, item.id);
+      if (item.quantity === 1) {
         // const updatedCart = state.cart.filter((product) => {
         //   if (product.id === id) {
         //     return false;
         //   }
         //   return true;
         // });
-        const updatedCart = state.cart.filter((product) => product.id !== id);
+        const updatedCart = state.cart.filter((product) => product.id !== item.id);
 
         return { ...state, cart: updatedCart };
       }
@@ -67,7 +67,7 @@ const productStore = create((set, get) => ({
       return { ...state };
     }),
 
-  deleteProductFromCart: (id) =>
+  deleteProductFromCart: (item) =>
     set((state) => {
       // const updatedCart = state.cart.filter((product) => {
       //   if (product.id === id) {
@@ -75,7 +75,7 @@ const productStore = create((set, get) => ({
       //   }
       //   return true;
       // });
-      const updatedCart = state.cart.filter((product) => product.id !== id);
+      const updatedCart = state.cart.filter((product) => product.id !== item.id);
 
       return { ...state, cart: updatedCart };
     }),
@@ -97,6 +97,17 @@ const productStore = create((set, get) => ({
     get().cart.reduce((total, { quantity, discountedPrice, price }) => {
       const currentPrice = discountedPrice ?? price;
       return total + currentPrice * quantity;
+    }, 0),
+
+  getTotalOriginalPrice: () =>
+    get().cart.reduce((totalOriginalPrice, { quantity, price }) => {
+      return totalOriginalPrice + price * quantity;
+    }, 0),
+
+  getTotalDiscount: () =>
+    get().cart.reduce((totalDiscount, { quantity, discountedPrice, price }) => {
+      const discountPerItem = discountedPrice ? price - discountedPrice : 0;
+      return totalDiscount + discountPerItem * quantity;
     }, 0),
 
   getTotalNumberOfItemsInCart: () =>
