@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CalculateDiscount from "../CalculateDiscount";
+import DisplayDiscountPercent from "../DisplayDiscountPercent";
 import DisplayPrice from "../DisplayPrice";
 import StarRating from "../StarRating";
 import Reviews from "../Reviews";
@@ -15,7 +15,7 @@ export default function ProductCard({ product }) {
         <div className="flex flex-col">
           <h2 className="card-title items-start justify-between">
             {product.title}
-            <CalculateDiscount price={product.price} discountedPrice={product.discountedPrice} />
+            <DisplayDiscountPercent price={product.price} discountedPrice={product.discountedPrice} />
           </h2>
           <div className="flex gap-2.5 text-dark-gray">
             <StarRating rating={product.rating} />

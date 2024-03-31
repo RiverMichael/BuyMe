@@ -7,7 +7,7 @@ import LoadingIndicator from "../ui/LoadingIndicator";
 import StarRating from "../StarRating";
 import Reviews from "../Reviews";
 import DisplayPrice from "../DisplayPrice";
-import CalculateDiscount from "../CalculateDiscount";
+import DisplayDiscountPercent from "../DisplayDiscountPercent";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import productStore from "../store/products";
@@ -96,7 +96,7 @@ export default function ProductDetails() {
                 <div className="flex flex-col-reverse">
                   <DisplayPrice price={product.price} discountedPrice={product.discountedPrice} />
                 </div>
-                <CalculateDiscount price={product.price} discountedPrice={product.discountedPrice} />
+                <DisplayDiscountPercent price={product.price} discountedPrice={product.discountedPrice} />
               </div>
               <button onClick={handleAddToCartClick} className="btn btn-sm btn-wide bg-gunmetal-gray text-ghost-white hover:border-gunmetal-gray hover:text-gunmetal-gray">
                 Add to cart

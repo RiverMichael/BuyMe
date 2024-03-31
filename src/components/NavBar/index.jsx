@@ -52,7 +52,7 @@ export default function NavBar() {
             </NavLink>
           </li>
         </ul>
-        <NavLink to="checkout">
+        <NavLink to="cart">
           <CartIcon />
         </NavLink>
       </div>

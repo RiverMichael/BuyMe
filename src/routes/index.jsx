@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../components/ui/Layout";
 import HomePage from "../components/Pages/HomePage";
 import ContactPage from "../components/Pages/ContactPage";
-import CheckoutPage from "../components/Pages/CheckoutPage";
+import CartPage from "../components/Pages/CartPage";
 import CheckoutSuccessPage from "../components/Pages/CheckoutSuccessPage";
 import ProductDetailsPage from "../components/Pages/ProductDetails";
 import PageNotFound from "../components/ui/PageNotFound";
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         element: <ContactPage />,
       },
       {
-        path: "checkout",
-        element: <CheckoutPage />,
+        path: "cart",
+        element: <CartPage />,
       },
       {
         path: "checkoutsuccess",
