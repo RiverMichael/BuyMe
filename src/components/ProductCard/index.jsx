@@ -7,8 +7,9 @@ import Reviews from "../Reviews";
 export default function ProductCard({ product }) {
   return (
     <div className="card card-compact w-80 bg-ghost-white shadow-lg border">
-      <figure className="w-full h-60 overflow-hidden rounded-t-box">
+      <figure className="w-full h-60 overflow-hidden rounded-t-box relative">
         <img src={product.image.url} alt={product.image.alt} className="w-full h-full object-cover rounded-t-box" />
+        {product.price > product.discountedPrice ? <span className="badge badge-md badge-accent rounded uppercase absolute top-0 right-0 m-3">On Sale</span> : ""}
       </figure>
 
       <div className="card-body gap-2.5 justify-between">
