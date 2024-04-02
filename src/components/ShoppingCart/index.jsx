@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import DisplayPrice from "../DisplayPrice";
 import productStore from "../store/products";
 import { IoTrashOutline } from "react-icons/io5";
+import DisplayDiscountPercent from "../DisplayDiscountPercent";
 
 export default function ShoppingCart() {
-  const { cart, increaseProductQuantity, decreaseProductQuantity, deleteProductFromCart, getCartTotal, getTotalDiscount, getTotalOriginalPrice, getTotalNumberOfItemsInCart } = productStore();
+  const { cart, increaseProductQuantity, decreaseProductQuantity, deleteProductFromCart, getCartTotal, getTotalDiscount, getTotalOriginalPrice, getTotalNumberOfItemsInCart, clearCart } =
+    productStore();
 
   function handleDeleteItem(item) {
     deleteProductFromCart(item);
@@ -19,73 +21,79 @@ export default function ShoppingCart() {
     decreaseProductQuantity(id);
   }
 
+  function handleClearCart() {
+    clearCart();
+  }
+
   return (
     <div className="flex flex-col gap-12">
       <h1 className="text-center">Checkout</h1>
 
-      <div className="flex flex-wrap">
-        <div className="grow overflow-x-auto">
-          <h2 className="text-2xl">Shopping cart</h2>
-          {cart.length ? (
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.map((item) => (
-                  <tr key={item.id}>
-                    <th>
-                      <Link to={`/products/${item.id}`} className="hover:opacity-70">
-                        <div className="flex items-center gap-2">
-                          <div className="avatar">
-                            <div className="mask mask-squircle w-12 h-12">
-                              <img src={item.image.url} alt={item.image.alt} />
-                            </div>
-                          </div>
-                          <h3 className="text-base">{item.title}</h3>
-                        </div>
-                      </Link>
-                    </th>
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 justify-center">
+        <div className="flex flex-col gap-5">
+          <div className="flex gap-5 justify-between">
+            <h2 className="text-2xl">Shopping cart</h2>
+            {cart.length ? (
+              <div>
+                <button onClick={() => handleClearCart()} className="btn btn-xs btn-outline rounded hover:bg-gunmetal-gray">
+                  Clear cart
+                </button>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
 
-                    <td>
-                      <div className="flex items-center justify-between gap-3">
-                        <button onClick={() => handleDecreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded-box hover:bg-gunmetal-gray w-8 h-8">
+          {cart.length ? (
+            <ul className="flex flex-col gap-3">
+              {cart.map((item) => (
+                <li key={item.id} className="flex border-y py-1 gap-5 justify-between">
+                  <div className="flex gap-5">
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="avatar w-24">
+                        <div className="w-full rounded">
+                          <img src={item.image.url} alt={item.image.alt} />
+                        </div>
+                      </div>
+
+                      <div className="flex w-full justify-between items-center">
+                        <button onClick={() => handleDecreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded hover:bg-gunmetal-gray">
                           -
                         </button>
                         {item.quantity}
-                        <button onClick={() => handleIncreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded-box  hover:bg-gunmetal-gray w-8 h-8">
+                        <button onClick={() => handleIncreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded  hover:bg-gunmetal-gray">
                           +
                         </button>
                       </div>
-                    </td>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h3 className="text-base">{item.title}</h3>
 
-                    <td>
-                      <div className="flex flex-row-reverse gap-2 items-center justify-end">
-                        <DisplayPrice price={item.price * item.quantity} discountedPrice={item.discountedPrice * item.quantity} />
+                      <div className="flex flex-col">
+                        <DisplayDiscountPercent price={item.price} discountedPrice={item.discountedPrice} />
+                        <div className="flex flex-row-reverse gap-2 items-center justify-end">
+                          <DisplayPrice price={item.price * item.quantity} discountedPrice={item.discountedPrice * item.quantity} />
+                        </div>
                       </div>
-                    </td>
+                    </div>
+                  </div>
 
-                    <td>
-                      <button onClick={() => handleDeleteItem(item)} className="btn btn-sm btn-outline border-none hover:bg-gunmetal-gray">
-                        <IoTrashOutline />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                  <div className="flex items-center">
+                    <button onClick={() => handleDeleteItem(item)} className="btn btn-sm btn-outline border-none hover:bg-gunmetal-gray">
+                      <IoTrashOutline />
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
           ) : (
             <div>
               <p>No items in the shopping cart</p>
             </div>
           )}
         </div>
-        <div className="flex-none flex flex-col gap-5 md:px-10 lg:px-20">
+
+        <div className="flex flex-col gap-5">
           <h2 className="text-2xl">Total</h2>
 
           <div className="flex flex-col gap-3">
@@ -104,7 +112,7 @@ export default function ShoppingCart() {
             )}
 
             {getTotalNumberOfItemsInCart() ? (
-              <div className="flex flex-col gap 1">
+              <div className="flex flex-col">
                 <p className="flex justify-between">
                   {getTotalNumberOfItemsInCart()} {cart.length > 1 ? "items" : "item"} <span>${getCartTotal().toFixed(2)}</span>
                 </p>
@@ -119,13 +127,14 @@ export default function ShoppingCart() {
             <h3 className="text-base flex justify-between">
               Total <span>${getCartTotal().toFixed(2)}</span>
             </h3>
-
+          </div>
+          <div className="flex justify-center">
             <button className="btn btn-wide bg-gunmetal-gray text-ghost-white hover:text-gunmetal-gray" disabled={!cart.length}>
               Checkout
             </button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
