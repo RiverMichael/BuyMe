@@ -10,7 +10,6 @@ export default function ShoppingCart() {
 
   function handleDeleteItem(item) {
     deleteProductFromCart(item);
-    console.log("delete", item.title);
   }
 
   function handleIncreaseProductQuantity(item) {
@@ -114,7 +113,7 @@ export default function ShoppingCart() {
             {getTotalNumberOfItemsInCart() ? (
               <div className="flex flex-col">
                 <p className="flex justify-between">
-                  {getTotalNumberOfItemsInCart()} {cart.length > 1 ? "items" : "item"} <span>${getCartTotal().toFixed(2)}</span>
+                  {getTotalNumberOfItemsInCart()} {getTotalNumberOfItemsInCart() > 1 ? "items" : "item"} <span>${getCartTotal().toFixed(2)}</span>
                 </p>
                 <p className="flex justify-between">
                   Delivery <span>Free</span>
