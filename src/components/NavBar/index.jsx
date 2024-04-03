@@ -63,7 +63,7 @@ export default function NavBar() {
             </NavLink>
           </li>
         </ul>
-        <NavLink to="cart">
+        <NavLink to="cart" className={({ isActive }) => `${isActive ? "text-dark-gray" : "hover:text-primary  hover:scale-110 hover:-rotate-12 transition-transform duration-300 ease-in-out"}`}>
           <CartIcon />
         </NavLink>
       </div>
