@@ -46,7 +46,8 @@ export default function Checkout() {
                   <p>{item.quantity}x</p>
                 </div>
                 <div className="flex justify-between gap-2 w-full ">
-                  <p>{item.title}</p> <p>${item.quantity * item.discountedPrice}</p>
+                  <p>{item.title}</p>
+                  <p>${(item.quantity * item.discountedPrice).toFixed(2)}</p>
                 </div>
               </li>
             ))}
