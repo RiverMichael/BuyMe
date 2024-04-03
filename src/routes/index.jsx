@@ -3,7 +3,7 @@ import Layout from "../components/ui/Layout";
 import HomePage from "../components/Pages/HomePage";
 import ContactPage from "../components/Pages/ContactPage";
 import CartPage from "../components/Pages/CartPage";
-import CheckoutSuccessPage from "../components/Pages/CheckoutSuccessPage";
+import CheckoutPage from "../components/Pages/CheckoutPage";
 import ProductDetailsPage from "../components/Pages/ProductDetails";
 import PageNotFound from "../components/ui/PageNotFound";
 
@@ -22,8 +22,8 @@ const router = createBrowserRouter([
         element: <CartPage />,
       },
       {
-        path: "checkoutsuccess",
-        element: <CheckoutSuccessPage />,
+        path: "checkout",
+        element: <CheckoutPage />,
       },
       {
         path: "products/:id",

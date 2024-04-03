@@ -129,9 +129,9 @@ export default function ShoppingCart() {
             </h3>
           </div>
           <div className="flex justify-center">
-            <button className="btn btn-wide bg-gunmetal-gray text-ghost-white hover:text-gunmetal-gray" disabled={!cart.length}>
+            <Link to="/checkout" className="btn btn-wide bg-gunmetal-gray text-ghost-white hover:text-gunmetal-gray" disabled={!cart.length}>
               Checkout
-            </button>
+            </Link>
           </div>
         </div>
       </section>
