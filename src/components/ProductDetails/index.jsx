@@ -113,19 +113,23 @@ export default function ProductDetails() {
         <section id="reviews" className="flex flex-col gap-2">
           <h3 className="text-2xl">Reviews</h3>
 
-          <div className="flex flex-col">
-            {product.reviews.map((review) => {
-              return (
-                <div key={review.id} className="border-t flex flex-col">
-                  <div className="flex gap-5">
-                    <h4 className="text-base">{review.username}</h4>
-                    <StarRating rating={review.rating} />
+          {product.reviews.length ? (
+            <div className="flex flex-col">
+              {product.reviews.map((review) => {
+                return (
+                  <div key={review.id} className="border-t flex flex-col">
+                    <div className="flex gap-5">
+                      <h4 className="text-base">{review.username}</h4>
+                      <StarRating rating={review.rating} />
+                    </div>
+                    <p>{review.description}</p>
                   </div>
-                  <p>{review.description}</p>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          ) : (
+            <p>This product has no reviews.</p>
+          )}
         </section>
 
         <div id="addToCartToast" className={`toast toast-top toast-end z-50 ${showToast ? "" : "hidden"}`}>
