@@ -1,5 +1,5 @@
 import Logo from "../../assets/buyme_logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartIcon from "../CartIcon";
 import { Link, NavLink } from "react-router-dom";
 import { Spin as Hamburger } from "hamburger-react";
@@ -7,27 +7,38 @@ import { Spin as Hamburger } from "hamburger-react";
 export default function NavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!event.target.closest(".dropdown")) {
+        setIsNavOpen(false);
+      }
+    };
+
+    if (isNavOpen) {
+      document.addEventListener("click", handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isNavOpen]);
+
   return (
     <div className="navbar bg-ghost-white p-5 border-b">
       <div className="navbar-start">
         <div className="dropdown static flex items-center">
-          <button onClick={() => setIsNavOpen(!isNavOpen)} tabIndex={0} className="p-0 lg:hidden">
-            <Hamburger size={30} direction="left" duration={0.5} rounded />
+          <button tabIndex={0} role="button" className="btn btn-ghost p-0 lg:hidden">
+            <Hamburger toggled={isNavOpen} toggle={setIsNavOpen} size={30} direction="left" duration={0.5} rounded />
           </button>
-          <ul className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content py-5 px-4 absolute top-20 mt-2 left-0 w-6/12 flex bg-ghost-white rounded-br-box border-b border-r `}>
+          <ul
+            tabIndex={0}
+            className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content z-[1] py-5 px-4 absolute top-20 mt-2 left-0 w-6/12 flex bg-ghost-white rounded-br-box border-b border-r`}>
             <li>
-              <NavLink
-                to="/"
-                onClick={() => setIsNavOpen(false)}
-                className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold text-base" : "text-base uppercase font-bold hover:text-primary")}>
+              <NavLink to="/" onClick={() => setIsNavOpen(false)} className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "text-dark-gray" : "hover:text-primary"}`}>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="contact"
-                onClick={() => setIsNavOpen(false)}
-                className={({ isActive }) => (isActive ? "text-dark-gray uppercase font-bold text-base" : "text-base uppercase font-bold hover:text-primary")}>
+              <NavLink to="contact" onClick={() => setIsNavOpen(false)} className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "text-dark-gray" : "hover:text-primary"}`}>
                 Contact
               </NavLink>
             </li>
