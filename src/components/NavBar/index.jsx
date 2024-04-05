@@ -33,12 +33,12 @@ export default function NavBar() {
             tabIndex={0}
             className={`${isNavOpen ? "block" : "hidden"} menu dropdown-content z-[1] py-5 px-4 absolute top-20 mt-2 left-0 w-6/12 flex bg-ghost-white rounded-br-box border-b border-r`}>
             <li>
-              <NavLink to="/" onClick={() => setIsNavOpen(false)} className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "text-dark-gray" : "hover:text-primary"}`}>
+              <NavLink to="/" onClick={() => setIsNavOpen(false)} className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "opacity-50" : "hover:text-primary"}`}>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="contact" onClick={() => setIsNavOpen(false)} className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "text-dark-gray" : "hover:text-primary"}`}>
+              <NavLink to="contact" onClick={() => setIsNavOpen(false)} className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "opacity-50" : "hover:text-primary"}`}>
                 Contact
               </NavLink>
             </li>
@@ -53,17 +53,17 @@ export default function NavBar() {
       <div className="navbar-end">
         <ul className="menu menu-horizontal hidden lg:flex">
           <li>
-            <NavLink to="/" className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "text-dark-gray" : "hover:text-primary transition-colors duration-300 ease-in-out"}`}>
+            <NavLink to="/" className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "opacity-50" : "hover:text-primary transition-colors duration-300 ease-in-out"}`}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="contact" className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "text-dark-gray" : "hover:text-primary transition-colors duration-300 ease-in-out"}`}>
+            <NavLink to="contact" className={({ isActive }) => `text-base uppercase font-bold ${isActive ? "opacity-50" : "hover:text-primary transition-colors duration-300 ease-in-out"}`}>
               Contact
             </NavLink>
           </li>
         </ul>
-        <NavLink to="cart" className={({ isActive }) => `${isActive ? "text-dark-gray" : "hover:text-primary  hover:scale-110 hover:-rotate-12 transition-transform duration-300 ease-in-out"}`}>
+        <NavLink to="cart" className={({ isActive }) => `${isActive ? "opacity-50" : "hover:text-primary  hover:scale-110 hover:-rotate-12 transition-transform duration-300 ease-in-out"}`}>
           <CartIcon />
         </NavLink>
       </div>

@@ -25,7 +25,7 @@ export default function ProductDetails() {
 
     setTimeout(() => {
       setShowToast(false);
-    }, 3000);
+    }, 2500);
   }
 
   // Scrolls down to #reviews section when clicking the reviews link
@@ -71,20 +71,20 @@ export default function ProductDetails() {
               </Link>
             </li>
             {product.tags ? <li className="capitalize">{product.tags[0]}</li> : ""}
-            <li className="text-dark-gray">{product.title}</li>
+            <li className="opacity-50">{product.title}</li>
           </ul>
         </div>
 
         <section className="flex flex-wrap">
           <figure className="basis-full md:basis-6/12 relative">
-            <img src={product.image.url} alt={product.image.alt} className="w-full shadow-lg rounded-box" />
+            <img src={product.image.url} alt={product.title} className="w-full shadow-lg rounded-box" />
             {product.price > product.discountedPrice ? <span className="badge badge-md badge-accent rounded uppercase absolute top-0 right-0 m-3">On Sale</span> : ""}
           </figure>
 
           <div className="basis-full md:basis-6/12 py-5 md:py-0 md:px-10 lg:px-20 flex flex-col gap-y-10">
             <div>
               <h1 className="text-3xl">{product.title}</h1>
-              <div className="flex gap-2.5 text-dark-gray">
+              <div className="flex gap-2.5 opacity-60">
                 <StarRating rating={product.rating} />
                 {product.reviews.length ? <span>|</span> : ""}
                 <Reviews id={product.id} reviews={product.reviews} />
@@ -135,7 +135,7 @@ export default function ProductDetails() {
         <div id="addToCartToast" className={`toast toast-top toast-end z-50 ${showToast ? "" : "hidden"}`}>
           <div className="alert bg-snow-mist whitespace-normal">
             <span>
-              You added <span className="text-base font-bold">{product.title}</span> to you shopping cart.
+              You added <span className="text-base font-bold">{product.title}</span> to the shopping cart.
             </span>
           </div>
         </div>

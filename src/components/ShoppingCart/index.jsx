@@ -79,7 +79,7 @@ export default function ShoppingCart() {
 
                   <div className="flex items-center">
                     <button onClick={() => handleDeleteItem(item)} className="btn btn-sm btn-outline border-none hover:bg-gunmetal-gray">
-                      <IoTrashOutline />
+                      <IoTrashOutline size={15} />
                     </button>
                   </div>
                 </li>
