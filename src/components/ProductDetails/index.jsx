@@ -13,7 +13,7 @@ import { useLocation } from "react-router-dom";
 import productStore from "../store/products";
 
 export default function ProductDetails() {
-  const id = useParams().id;
+  let id = useParams().id;
   const { data, isError, isLoading } = useFetch(API_BASE_URL + id);
   const product = data.data;
   const { addToCart } = productStore();
