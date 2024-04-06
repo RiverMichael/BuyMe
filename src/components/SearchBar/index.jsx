@@ -22,7 +22,7 @@ export default function SearchBar({ isVisible }) {
   }, [searchTerm, products]);
 
   return (
-    <div className={`form-control items-center max-w-xl px-5 sm:mx-auto w-full relative ${!isVisible ? "hidden" : ""}`}>
+    <div className={`form-control items-center max-w-xl mx-auto w-full relative ${!isVisible ? "hidden" : ""}`}>
       <label className="input input-bordered bg-snow-mist rounded flex items-center gap-2 w-full px-2 border-silver-chalice hover:border-gunmetal-gray focus:outline-none focus-within:outline-none">
         <IoSearchOutline size={20} />
         <input

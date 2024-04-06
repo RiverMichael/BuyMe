@@ -56,7 +56,7 @@ export default function NavBar() {
           </Link>
         </div>
 
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center w-1/2 hidden lg:inline-flex">
           <SearchBar isVisible={true} />
         </div>
 
@@ -82,7 +82,7 @@ export default function NavBar() {
         </div>
       </div>
       {isSearchVisible && (
-        <div className={`bg-ghost-white pb-5 lg:hidden ${isSearchVisible ? "border-b border-gray-200" : ""}`}>
+        <div className={`bg-ghost-white pb-5 px-5 lg:hidden ${isSearchVisible ? "border-b border-gray-200" : ""}`}>
           <SearchBar isVisible={isSearchVisible} />
         </div>
       )}
