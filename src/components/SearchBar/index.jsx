@@ -34,7 +34,7 @@ export default function SearchBar({ isVisible }) {
           onBlur={() => {
             setTimeout(() => {
               setShowSuggestions(false);
-            }, 100);
+            }, 200);
           }}
           onFocus={() => searchTerm && setShowSuggestions(true)}
         />
