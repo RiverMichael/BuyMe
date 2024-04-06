@@ -1,6 +1,9 @@
 import ContactForm from "../../ContactForm";
+import useDocumentTitle from "../../Hooks/useDocumentTitle";
 
 export default function ContactPage() {
+  useDocumentTitle("Contact");
+
   return (
     <>
       <main className="mt-10 mb-20 container mx-auto items-center flex flex-col gap-y-10">

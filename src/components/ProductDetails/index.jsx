@@ -19,6 +19,14 @@ export default function ProductDetails() {
   const { addToCart } = productStore();
   const [showToast, setShowToast] = useState(false);
 
+  useEffect(() => {
+    if (product && !isLoading && !isError) {
+      document.title = `${product.title} | Products | BuyMe`;
+    } else if (isError) {
+      document.title = "Product not found | Products | BuyMe";
+    }
+  }, [product, isLoading, isError]);
+
   function handleAddToCartClick() {
     addToCart(product);
     setShowToast(true);
@@ -57,7 +65,7 @@ export default function ProductDetails() {
   }
 
   if (isError) {
-    return <ErrorMessage />;
+    return <ErrorMessage message="Oooops! We could not find this product, please try again." />;
   }
 
   if (product) {
@@ -70,7 +78,6 @@ export default function ProductDetails() {
                 All Products
               </Link>
             </li>
-            {product.tags ? <li className="capitalize">{product.tags[0]}</li> : ""}
             <li className="opacity-50">{product.title}</li>
           </ul>
         </div>
