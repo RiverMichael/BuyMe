@@ -34,12 +34,10 @@ export default function ContactForm() {
         <input
           id="fullName"
           {...register("fullName")}
-          className={`input input-bordered rounded grow ${
-            errors.fullName ? "border-red-500 focus:border-red-500" : "border-silver-chalice"
-          } hover:border-gunmetal-gray focus:outline-none focus:border-2`}
+          className={`input input-bordered rounded grow ${errors.fullName ? "border-error focus:border-error" : "border-silver-chalice"} hover:border-gunmetal-gray focus:outline-none focus:border-2`}
           placeholder="Firstname Lastname"
         />
-        <p className="text-red-500 text-sm" aria-live="polite">
+        <p className="text-error text-sm" aria-live="polite">
           {errors.fullName?.message}
         </p>
       </div>
@@ -56,10 +54,10 @@ export default function ContactForm() {
           type="email"
           id="email"
           {...register("email")}
-          className={`input input-bordered rounded grow ${errors.email ? "border-red-500 focus:border-red-500" : "border-silver-chalice"} hover:border-gunmetal-gray focus:outline-none focus:border-2`}
+          className={`input input-bordered rounded grow ${errors.email ? "border-error focus:border-error" : "border-silver-chalice"} hover:border-gunmetal-gray focus:outline-none focus:border-2`}
           placeholder="name@mail.com"
         />
-        <p className="text-red-500 text-sm" aria-live="polite">
+        <p className="text-error text-sm" aria-live="polite">
           {errors.email?.message}
         </p>
       </div>
@@ -75,12 +73,10 @@ export default function ContactForm() {
         <input
           id="subject"
           {...register("subject")}
-          className={`input input-bordered rounded grow ${
-            errors.subject ? "border-red-500 focus:border-red-500" : "border-silver-chalice"
-          } hover:border-gunmetal-gray focus:outline-none focus:border-2`}
+          className={`input input-bordered rounded grow ${errors.subject ? "border-error focus:border-error" : "border-silver-chalice"} hover:border-gunmetal-gray focus:outline-none focus:border-2`}
           placeholder="Write the subject here"
         />
-        <p className="text-red-500 text-sm" aria-live="polite">
+        <p className="text-error text-sm" aria-live="polite">
           {errors.subject?.message}
         </p>
       </div>
@@ -98,10 +94,10 @@ export default function ContactForm() {
           id="message"
           {...register("body")}
           className={`textarea textarea-bordered text-base rounded grow ${
-            errors.body ? "border-red-500 focus:border-red-500" : "border-silver-chalice"
+            errors.body ? "border-error focus:border-error" : "border-silver-chalice"
           } hover:border-gunmetal-gray focus:outline-none focus:border-2`}
           placeholder="Write your message here"></textarea>
-        <p className="text-red-500 text-sm" aria-live="polite">
+        <p className="text-error text-sm" aria-live="polite">
           {errors.body?.message}
         </p>
       </div>

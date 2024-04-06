@@ -4,8 +4,8 @@ import HomePage from "../components/Pages/HomePage";
 import ContactPage from "../components/Pages/ContactPage";
 import CartPage from "../components/Pages/CartPage";
 import CheckoutPage from "../components/Pages/CheckoutPage";
-import ProductDetailsPage from "../components/Pages/ProductDetails";
-import PageNotFound from "../components/ui/PageNotFound";
+import ProductDetailsPage from "../components/Pages/ProductDetailsPage";
+import NotFoundPage from "../components/Pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <PageNotFound />,
+        element: <NotFoundPage />,
       },
     ],
   },
