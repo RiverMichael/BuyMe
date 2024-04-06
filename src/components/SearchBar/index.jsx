@@ -51,9 +51,14 @@ export default function SearchBar({ isVisible }) {
       {showSuggestions && !isLoading && !isError && (
         <ul className="menu rounded px-0 bg-snow-mist border border-gray-200 w-full absolute z-50 top-full">
           {suggestions.length > 0 ? (
-            suggestions.map(({ title, id }) => (
+            suggestions.map(({ id, title, image }) => (
               <li key={id} className="hover:bg-gray-200 text-base">
-                <Link to={`products/${id}`}>{title}</Link>
+                <Link to={`products/${id}`}>
+                  <figure className="avatar w-8 h-8">
+                    <img src={image.url} alt="title" className="rounded" />
+                  </figure>
+                  {title}
+                </Link>
               </li>
             ))
           ) : (
