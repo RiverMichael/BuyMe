@@ -18,14 +18,11 @@ export default function ProductsList() {
 
   if (products) {
     return (
-      <div className="flex flex-col gap-y-10">
-        <h1 className="text-center">Products</h1>
-        <div className="flex flex-wrap gap-y-10 gap-x-5 justify-evenly">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
+      <section className="flex flex-wrap gap-y-10 gap-x-5 justify-evenly">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </section>
     );
   }
 }
