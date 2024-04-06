@@ -9,6 +9,9 @@ export default function useFetch(url) {
     async function fetchProducts() {
       try {
         const response = await fetch(url);
+        if (!response.ok) {
+          setIsError(true);
+        }
         const json = await response.json();
         setData(json);
       } catch (error) {
@@ -18,6 +21,7 @@ export default function useFetch(url) {
         setIsLoading(false);
       }
     }
+
     fetchProducts();
   }, [url]);
 
