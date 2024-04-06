@@ -51,7 +51,9 @@ export default function ShoppingCart() {
                     <div className="flex flex-col items-center gap-3">
                       <div className="avatar w-24">
                         <div className="w-full rounded">
-                          <img src={item.image.url} alt={item.image.alt} />
+                          <Link to={`/products/${item.id}`}>
+                            <img src={item.image.url} alt={item.title} />
+                          </Link>
                         </div>
                       </div>
 
@@ -66,7 +68,9 @@ export default function ShoppingCart() {
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <h3 className="text-base">{item.title}</h3>
+                      <Link to={`/products/${item.id}`} className="hover:opacity-60">
+                        <h3 className="text-base">{item.title}</h3>
+                      </Link>
 
                       <div className="flex flex-col">
                         <DisplayDiscountPercent price={item.price} discountedPrice={item.discountedPrice} />
