@@ -10,13 +10,13 @@ import DisplayPrice from "../DisplayPrice";
 import DisplayDiscountPercent from "../DisplayDiscountPercent";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import productStore from "../store/products";
+import cartStore from "../store/cart";
 
 export default function ProductDetails() {
   let id = useParams().id;
   const { data, isError, isLoading } = useFetch(API_BASE_URL + id);
   const product = data.data;
-  const { addToCart } = productStore();
+  const { addToCart } = cartStore();
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {

@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import DisplayPrice from "../DisplayPrice";
-import productStore from "../store/products";
+import cartStore from "../store/cart";
 import { IoTrashOutline } from "react-icons/io5";
 import DisplayDiscountPercent from "../DisplayDiscountPercent";
 
 export default function ShoppingCart() {
-  const { cart, increaseProductQuantity, decreaseProductQuantity, deleteProductFromCart, getCartTotal, getTotalDiscount, getTotalOriginalPrice, getTotalNumberOfItemsInCart, clearCart } =
-    productStore();
+  const { cart, increaseProductQuantity, decreaseProductQuantity, deleteProductFromCart, getCartTotal, getTotalDiscount, getTotalOriginalPrice, getTotalNumberOfItemsInCart, clearCart } = cartStore();
 
   function handleDeleteItem(item) {
     deleteProductFromCart(item);

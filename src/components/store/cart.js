@@ -1,30 +1,14 @@
 import { create } from "zustand";
-// import { API_BASE_URL } from "../../shared/api";
 
 const findProductInCartIndex = (state, productId) => {
   return state.cart.findIndex((product) => productId === product.id);
 };
 
-const productStore = create((set, get) => ({
-  products: [],
+const cartStore = create((set, get) => ({
   cart: [],
-
-  // fetchProducts: async () => {
-  //   try {
-  //     const response = await fetch(API_BASE_URL);
-  //     const json = await response.json();
-  //     // set((state) => ({ ...state, products: json.data }));
-  //     set({ products: json.data });
-  //   } catch (error) {
-  //     console.error("Failed to fetch products:", error);
-  //   }
-  // },
 
   addToCart: (product) => {
     set((state) => {
-      // const product = state.products.find((product) => id === product.id);
-
-      // const productInCartIndex = state.cart.findIndex((product) => id === product.id);
       const productInCartIndex = findProductInCartIndex(state, product.id);
 
       if (productInCartIndex === -1) {
@@ -36,12 +20,10 @@ const productStore = create((set, get) => ({
     });
   },
 
-  // clearCart: () => set(() => ({ cart: [] })),
   clearCart: () => set({ cart: [] }),
 
   increaseProductQuantity: (item) =>
     set((state) => {
-      // const productInCartIndex = state.cart.findIndex((product) => id === product.id);
       const productInCartIndex = findProductInCartIndex(state, item.id);
       state.cart[productInCartIndex].quantity++;
       return { ...state };
@@ -49,18 +31,10 @@ const productStore = create((set, get) => ({
 
   decreaseProductQuantity: (item) =>
     set((state) => {
-      // const product = state.products.find((product) => id === product.id);
-      // const productInCartIndex = state.cart.findIndex((product) => id === product.id);
       const productInCartIndex = findProductInCartIndex(state, item.id);
-      if (item.quantity === 1) {
-        // const updatedCart = state.cart.filter((product) => {
-        //   if (product.id === id) {
-        //     return false;
-        //   }
-        //   return true;
-        // });
-        const updatedCart = state.cart.filter((product) => product.id !== item.id);
 
+      if (item.quantity === 1) {
+        const updatedCart = state.cart.filter((product) => product.id !== item.id);
         return { ...state, cart: updatedCart };
       }
       state.cart[productInCartIndex].quantity--;
@@ -69,29 +43,9 @@ const productStore = create((set, get) => ({
 
   deleteProductFromCart: (item) =>
     set((state) => {
-      // const updatedCart = state.cart.filter((product) => {
-      //   if (product.id === id) {
-      //     return false;
-      //   }
-      //   return true;
-      // });
       const updatedCart = state.cart.filter((product) => product.id !== item.id);
-
       return { ...state, cart: updatedCart };
     }),
-
-  // getCartTotal: () =>
-  //   get().cart.reduce((total, product) => {
-  //     if (product.discountedPrice) {
-  //       const currentPrice = product.discountedPrice * product.quantity;
-  //       total += currentPrice;
-  //       return total;
-  //     } else {
-  //       const currentPrice = product.price * product.quantity;
-  //       total += currentPrice;
-  //       return total;
-  //     }
-  //   }, 0),
 
   getCartTotal: () =>
     get().cart.reduce((total, { quantity, discountedPrice, price }) => {
@@ -117,4 +71,4 @@ const productStore = create((set, get) => ({
     }, 0),
 }));
 
-export default productStore;
+export default cartStore;

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import productStore from "../store/products";
+import cartStore from "../store/cart";
 import { Link } from "react-router-dom";
 
 export default function Checkout() {
-  const { cart, clearCart, getCartTotal } = productStore();
+  const { cart, clearCart, getCartTotal } = cartStore();
   const [orderNumber, setOrderNumber] = useState("");
   const [orderedItems, setOrderedItems] = useState([]);
   const [orderedAmount, setOrderedAmount] = useState("");
