@@ -27,7 +27,7 @@ export default function ShoppingCart() {
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 justify-center">
       <div className="flex flex-col gap-5">
         <div className="flex gap-5 justify-between">
-          <h2 className="text-2xl">Your products</h2>
+          <h2 className="text-2xl">Your items</h2>
           {cart.length ? (
             <div>
               <button onClick={() => handleClearCart()} className="btn btn-xs btn-outline rounded hover:bg-gunmetal-gray">
