@@ -31,7 +31,7 @@ export default function ProductCard({ product }) {
         </div>
 
         <div className="card-actions justify-center">
-          <Link to={`/products/${product.id}`} className="btn btn-sm btn-wide bg-gunmetal-gray text-ghost-white hover:border-gunmetal-gray hover:text-gunmetal-gray">
+          <Link to={`/products/${product.id}`} className="btn btn-sm btn-wide btn-cta">
             View product
           </Link>
         </div>

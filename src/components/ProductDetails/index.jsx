@@ -114,7 +114,7 @@ export default function ProductDetails() {
                 </div>
                 <DisplayDiscountPercent price={product.price} discountedPrice={product.discountedPrice} />
               </div>
-              <button onClick={handleAddToCartClick} className="btn btn-sm btn-wide bg-gunmetal-gray text-ghost-white hover:border-gunmetal-gray hover:text-gunmetal-gray">
+              <button onClick={handleAddToCartClick} className="btn btn-sm btn-wide btn-cta">
                 Add to cart
               </button>
             </div>

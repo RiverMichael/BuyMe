@@ -56,7 +56,7 @@ export default function Checkout() {
         </section>
       </div>
 
-      <Link to="/" className="btn btn-wide bg-gunmetal-gray text-ghost-white hover:text-gunmetal-gray">
+      <Link to="/" className="btn btn-wide btn-cta">
         Continue shopping
       </Link>
     </div>

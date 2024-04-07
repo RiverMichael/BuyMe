@@ -109,7 +109,7 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <button className="btn btn-wide bg-gunmetal-gray text-ghost-white hover:text-gunmetal-gray">Send message</button>
+        <button className="btn btn-wide btn-cta">Send message</button>
       </form>
 
       <dialog id="confirmationModal" className="modal">
@@ -122,7 +122,7 @@ export default function ContactForm() {
           <p className="py-4">Thank you for sending us a message, our normal response time is within 48h.</p>
 
           <div className="modal-action justify-center">
-            <Link to="/" className="btn btn-wide bg-gunmetal-gray text-ghost-white hover:text-gunmetal-gray">
+            <Link to="/" className="btn btn-wide btn-cta">
               Go back to the home page
             </Link>
           </div>

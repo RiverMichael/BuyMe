@@ -54,11 +54,11 @@ export default function ShoppingCart() {
                     </div>
 
                     <div className="flex w-full justify-between items-center">
-                      <button onClick={() => handleDecreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded hover:bg-gunmetal-gray">
+                      <button onClick={() => handleDecreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded w-8 h-8 hover:bg-gunmetal-gray">
                         -
                       </button>
                       {item.quantity}
-                      <button onClick={() => handleIncreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded  hover:bg-gunmetal-gray">
+                      <button onClick={() => handleIncreaseProductQuantity(item)} className="btn btn-sm btn-outline rounded w-8 h-8 hover:bg-gunmetal-gray">
                         +
                       </button>
                     </div>
@@ -78,7 +78,7 @@ export default function ShoppingCart() {
                 </div>
 
                 <div className="flex items-center">
-                  <button aria-label="Delete item from cart" onClick={() => handleDeleteItem(item)} className="btn btn-sm btn-outline border-none hover:bg-gunmetal-gray">
+                  <button aria-label="Delete item from cart" onClick={() => handleDeleteItem(item)} className="btn btn-sm btn-ghost btn-circle hover:bg-gunmetal-gray hover:text-ghost-white">
                     <IoTrashOutline size={15} />
                   </button>
                 </div>
@@ -128,7 +128,7 @@ export default function ShoppingCart() {
           </h3>
         </div>
         <div className="flex justify-center">
-          <Link to="/checkout" className="btn btn-wide bg-gunmetal-gray text-ghost-white hover:text-gunmetal-gray" disabled={!cart.length}>
+          <Link to="/checkout" className="btn btn-wide btn-cta" disabled={!cart.length}>
             Checkout
           </Link>
         </div>
