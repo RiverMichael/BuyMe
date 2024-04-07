@@ -78,7 +78,7 @@ export default function ShoppingCart() {
                 </div>
 
                 <div className="flex items-center">
-                  <button onClick={() => handleDeleteItem(item)} className="btn btn-sm btn-outline border-none hover:bg-gunmetal-gray">
+                  <button aria-label="Delete item from cart" onClick={() => handleDeleteItem(item)} className="btn btn-sm btn-outline border-none hover:bg-gunmetal-gray">
                     <IoTrashOutline size={15} />
                   </button>
                 </div>

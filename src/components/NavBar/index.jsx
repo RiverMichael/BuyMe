@@ -32,7 +32,7 @@ export default function NavBar() {
       `}>
         <div className="navbar-start">
           <div className="dropdown static flex items-center">
-            <button tabIndex={0} role="button" className="btn btn-ghost p-0 lg:hidden">
+            <button aria-label="Show menu" tabIndex={0} role="button" className="btn btn-ghost p-0 lg:hidden">
               <Hamburger toggled={isNavOpen} toggle={setIsNavOpen} size={30} direction="left" duration={0.5} rounded />
             </button>
             <ul
@@ -61,7 +61,7 @@ export default function NavBar() {
         </div>
 
         <div className="navbar-end">
-          <button onClick={() => setIsSearchVisible(!isSearchVisible)} className="btn btn-ghost btn-circle lg:hidden">
+          <button aria-label="Search products" onClick={() => setIsSearchVisible(!isSearchVisible)} className="btn btn-ghost btn-circle lg:hidden">
             <IoSearchOutline size={30} />
           </button>
           <ul className="menu menu-horizontal hidden lg:flex">
@@ -76,7 +76,10 @@ export default function NavBar() {
               </NavLink>
             </li>
           </ul>
-          <NavLink to="cart" className={({ isActive }) => `${isActive ? "opacity-50" : "hover:text-primary  hover:scale-110 hover:-rotate-12 transition-transform duration-300 ease-in-out"}`}>
+          <NavLink
+            to="cart"
+            aria-label="View shopping cart"
+            className={({ isActive }) => `${isActive ? "opacity-50" : "hover:text-primary  hover:scale-110 hover:-rotate-12 transition-transform duration-300 ease-in-out"}`}>
             <CartIcon />
           </NavLink>
         </div>

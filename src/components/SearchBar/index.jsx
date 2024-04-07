@@ -22,11 +22,12 @@ export default function SearchBar({ isVisible }) {
   }, [searchTerm, products]);
 
   return (
-    <div className={`form-control items-center max-w-xl mx-auto w-full relative ${!isVisible ? "hidden" : ""}`}>
-      <label className="input input-bordered bg-snow-mist rounded flex items-center gap-2 w-full px-2 border-silver-chalice hover:border-gunmetal-gray focus:outline-none focus-within:outline-none">
+    <form className={`form-control items-center max-w-xl mx-auto w-full relative ${!isVisible ? "hidden" : ""}`}>
+      <div className="input input-bordered bg-snow-mist rounded flex items-center gap-2 w-full px-2 border-silver-chalice hover:border-gunmetal-gray focus:outline-none focus-within:outline-none">
         <IoSearchOutline size={20} />
         <input
           type="text"
+          aria-label="Search products"
           placeholder="Search products"
           className="w-full"
           value={searchTerm}
@@ -40,6 +41,7 @@ export default function SearchBar({ isVisible }) {
         />
         {searchTerm && (
           <button
+            aria-label="Clear search"
             onClick={() => {
               setSearchTerm("");
             }}
@@ -47,7 +49,7 @@ export default function SearchBar({ isVisible }) {
             <IoCloseOutline size={20} />
           </button>
         )}
-      </label>
+      </div>
       {showSuggestions && !isLoading && !isError && (
         <ul className="menu rounded px-0 bg-snow-mist border border-gray-200 w-full absolute z-50 top-full">
           {suggestions.length > 0 ? (
@@ -66,6 +68,6 @@ export default function SearchBar({ isVisible }) {
           )}
         </ul>
       )}
-    </div>
+    </form>
   );
 }
