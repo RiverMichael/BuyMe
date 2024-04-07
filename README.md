@@ -51,9 +51,9 @@
 
 ### Description
 
-This is my project for the course JS - Frameworks at [Noroff][noroff-url]. The assignment was to create an eCom store using React.
+This is my project for the course in _JS - Frameworks_ at [Noroff][noroff-url]. The assignment was to create an eCom store using React.
 
-The implementation was done using the Noroff Online-shop API, provided from [Noroff][noroff-url].
+The implementation was done using the Noroff Online-shop API, provided by [Noroff][noroff-url].
 
 ### Built With
 
@@ -103,19 +103,19 @@ git init
 git clone https://github.com/RiverMichael/BuyMe.git
 ```
 
-4. Navigate to the project folder
+4. Navigate to the project folder:
 
 ```sh
 cd BuyMe
 ```
 
-5. Install NPM packages
+5. Install NPM packages:
 
 ```sh
 npm i
 ```
 
-6. To run the application locally using Vite
+6. To run the application locally using Vite:
 
 ```sh
 npm run dev
