@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import useDocumentTitle from "../../Hooks/useDocumentTitle";
+import useUpdateHead from "../../Hooks/useUpdateHead";
 
 export default function NotFoundPage() {
-  useDocumentTitle("404 - Page not found");
+  useUpdateHead("404 - Page not found", "This page is unfortunately not fount at BuyMe");
 
   return (
     <main className="mt-10 mb-20 mx-auto px-5">

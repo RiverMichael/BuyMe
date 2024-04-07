@@ -20,10 +20,19 @@ export default function ProductDetails() {
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
+    let metaDescription = document.querySelector("meta[name='description']");
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+
     if (product && !isLoading && !isError) {
       document.title = `${product.title} | Products | BuyMe`;
+      metaDescription.setAttribute("content", `Buy this amazing ${product.title} at BuyMe`);
     } else if (isError) {
       document.title = "Product not found | Products | BuyMe";
+      metaDescription.setAttribute("content", "Unfortunately we don`t have this product at BuyMe");
     }
   }, [product, isLoading, isError]);
 

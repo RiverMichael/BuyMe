@@ -1,8 +1,8 @@
 import ContactForm from "../../ContactForm";
-import useDocumentTitle from "../../Hooks/useDocumentTitle";
+import useUpdateHead from "../../Hooks/useUpdateHead";
 
 export default function ContactPage() {
-  useDocumentTitle("Contact");
+  useUpdateHead("Contact", "Feel free to contact us at BuyMe if you have any questions");
 
   return (
     <>
