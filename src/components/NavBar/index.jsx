@@ -32,8 +32,8 @@ export default function NavBar() {
       `}>
         <div className="navbar-start">
           <div className="dropdown static flex items-center">
-            <button aria-label="Show menu" tabIndex={0} role="button" className="btn btn-ghost p-0 lg:hidden">
-              <Hamburger toggled={isNavOpen} toggle={setIsNavOpen} size={30} direction="left" duration={0.5} rounded />
+            <button aria-label="Show menu" tabIndex={0} className="btn btn-ghost p-0 lg:hidden">
+              <Hamburger label="Show menu" toggled={isNavOpen} toggle={setIsNavOpen} size={30} direction="left" duration={0.5} rounded />
             </button>
             <ul
               tabIndex={0}
