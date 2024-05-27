@@ -8,7 +8,7 @@
   </a>
 
 <h3>JS Frameworks - React - BuyMe</h3>
-<p>An eCom store built with React, Vite, TailwindCSS, DaisyUi, and the Noroff API.</p>
+<p>An eCom store built with React, Vite, Tailwind CSS, DaisyUi, and the Noroff API.</p>
 
 [Link to project][github-repo] - [Link to live site][live-site]
 
@@ -58,12 +58,11 @@ The implementation was done using the Noroff Online-shop API, provided by [Norof
 ### Built With
 
 <div style="display: inline-block; text-align: center; ">
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/html.svg" alt="html" height="30" width="40"></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/css.svg" alt="css" height="30" width="40"></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/ProgrammingLanguages/javascript.svg" alt="javascript" height="30" width="40"></a>
 <a href="https://react.dev/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/reactjs.svg" alt="react" height="30" width="40"></a>
 <a href="https://vitejs.dev/" target="_blank"><img src="/public/vite.svg" alt="vite" height="30" width="40"></a>
 <a href="https://tailwindcss.com/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/tailwind.svg" alt="tailwindcss" height="30" width="40"></a>
+<a href="https://daisyui.com/" target="_blank"><img src="/public/daisyui_logo.svg" alt="daisyui" height="30" width="40"></a>
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -179,7 +178,7 @@ Michael "River" Nilsson - [mrn@michaelriver.dev][mrn-mail] - [michaelriver.dev][
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
-- [TailwindCSS](https://tailwindcss.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [DaisyUi](https://daisyui.com/)
 - [Noroff](https://www.noroff.no)
 - [Netlify](https://app.netlify.com)
