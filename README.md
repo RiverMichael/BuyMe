@@ -8,7 +8,7 @@
   </a>
 
 <h3>JS Frameworks - React - BuyMe</h3>
-<p>An eCom store built with React, Vite, Tailwind CSS, DaisyUi, and the Noroff API.</p>
+<p><i>A fictional eCom store built with React, Vite, Tailwind CSS, DaisyUi, and the Noroff API.</i></p>
 
 [Link to project][github-repo] - [Link to live site][live-site]
 
@@ -51,18 +51,14 @@
 
 ### Description
 
-This is my project for the course in _JS - Frameworks_ at [Noroff][noroff-url]. The assignment was to create an eCom store using React.
+This was my course assignment for the course in _JavaScript - Frameworks_ at [Noroff][noroff-url]. The assignment was to create an eCom store using React.
 
 The implementation was done using the Noroff Online-shop API, provided by [Noroff][noroff-url].
 
 ### Built With
 
 <div style="display: inline-block; text-align: center; ">
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/ProgrammingLanguages/javascript.svg" alt="javascript" height="30" width="40"></a>
-<a href="https://react.dev/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/reactjs.svg" alt="react" height="30" width="40"></a>
-<a href="https://vitejs.dev/" target="_blank"><img src="/public/vite.svg" alt="vite" height="30" width="40"></a>
-<a href="https://tailwindcss.com/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/tailwind.svg" alt="tailwindcss" height="30" width="40"></a>
-<a href="https://daisyui.com/" target="_blank"><img src="/public/daisyui_logo.svg" alt="daisyui" height="30" width="40"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/ProgrammingLanguages/javascript.svg" alt="javascript" height="30" width="40"></a> <a href="https://react.dev/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/reactjs.svg" alt="react" height="30" width="40"></a> <a href="https://vitejs.dev/" target="_blank"><img src="/public/vite.svg" alt="vite" height="30" width="40"></a> <a href="https://tailwindcss.com/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/tailwind.svg" alt="tailwindcss" height="30" width="40"></a> <a href="https://daisyui.com/" target="_blank"><img src="/public/daisyui_logo.svg" alt="daisyui" height="30" width="40"></a>
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -164,7 +160,7 @@ Please report any issues [here][github-issues] by following this steps:
 
 ## Contact
 
-Michael "River" Nilsson - [mrn@michaelriver.dev][mrn-mail] - [michaelriver.dev][mrn-url]
+Michael "River" Nilsson - [mrn@michaelriver.dev][mrn-mail] | [michaelriver.dev][mrn-url]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -172,7 +168,7 @@ Michael "River" Nilsson - [mrn@michaelriver.dev][mrn-mail] - [michaelriver.dev][
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AACKNOWLEDGMENTS -->
+<!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments
 
